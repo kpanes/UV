@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titile>Document</titile>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <style>
+        #map { height: 480px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var marker = L.marker([19.460156, -96.961551]).addTo(map);
+//var marker = L.marker([19.4536, -96.9588]).addTo(map);
+marker.bindPopup("<b>Soy Kevin!</b><br>Vamos por una nieve").openPopup();
+
+    </script>
+
+</script>
+<div>
+    <form>
+      <label for="latitud">Latitud:</label>
+      <input type="number" step="any" id="latitud" name="latitud"><br><br>
+      <label for="longitud">Longitud:</label>
+      <input type="number" step="any" id="longitud" name="longitud"><br><br>
+      <button type="button" onclick="addMarker()">Buscar</button>
+    </form>
+  </div>
+  
+  <script>
+    function addMarker() {
+        var lat = document.getElementById("latitud").value;
+        var lng = document.getElementById("longitud").value;
+
+        var marker = L.marker([lat, lng]).addTo(map);
+        marker.bindPopup("Nueva ubicación").openPopup();
+    }
+     </script>
+</body>
+</html>

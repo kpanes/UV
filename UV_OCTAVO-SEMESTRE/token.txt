@@ -1,0 +1,4 @@
+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
+git add .
+git commit -m "integracion de componentes programa"
+git push

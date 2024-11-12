@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="consulta">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="rev" type="xs:string"/>
+      <xs:element name="rv" type="xs:string"/>
+      <xs:element name="uuid" type="xs:string"/>
+      <xs:element name="cfdi" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

@@ -1,0 +1,25 @@
+DOCTYPE <html>
+<head>
+    <title>Calcular Hash MD5</title>
+    <script>src="https://cdnjs.clouddflare.com/ajax/libs/blueimp-md5/2"</script>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Introduce el texto"
+    <button onclick="calcularHash()" Calcular Hash MD5 /button>
+    <div> id="hashResult"</div>
+    <script>
+        function calcularHash() {
+            const inputText = document.getElementById("inputText");
+            const hashResult = document.getElementById("hashResult");
+
+            if (inputText) {
+                const hash = md5(inputText);
+                hashResult.innerHTML = "Hash MD5 (hash)";
+            }
+            else {
+                hashResult.innerHTML = "Por favor, ingresa un texto aleatorio";
+            }
+        }
+    </script>
+</body>
+</html>

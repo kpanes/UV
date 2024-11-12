@@ -1,0 +1,12 @@
+Como puede afectar la ingenieria social en una orgnaizacion: 
+El impacto de la ingenieria social contra los negocios a menudo proviene del malware, en particular, de los programas
+de los cuales se benefician los piratas informaticos, como el ransoware. este tipo de sofware se crea con la fnalidad de encriptar y retener archivos
+de una empresa
+El impacto de la ingenieria social contra los negocios y organizaciones empieza con la reputacion, la perdida de datos por
+parte de la empresa ya es de por si devestadora, pero poca cosas son tan dificiles de recuperar
+como la buena fe que habias ganado a tus clientes.
+
+ingeniria social en las redes sociales: la ingenieria social en redes sociales se refiere al uso de la manipulacion psicologica y el engaño en plataformas
+de redes sociales para engañar a las personas para que revelen informacion sensible o realicen acciones que comprometan su seguridad.
+La ingenieria social en redes sociales suele consistir en hacerse pasar por entidades de confianza, como un banco o una agencia gubernamental, o en utilizar perfiles
+falsos para engañar a la gente y coneguir que divulgue informacion personal o envie dinero.

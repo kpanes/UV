@@ -1,0 +1,49 @@
+class ProgramaRadio {
+  constructor(nombre, descripcion, horario) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.horario = horario;
+  }
+
+  toString() {
+    return `${this.nombre} (${this.horario}): ${this.descripcion}`;
+  }
+}
+
+class ListaProgramasRadio {
+  constructor() {
+    this.programas = [];
+  }
+
+  agregarPrograma(nombre, descripcion, horario) {
+    const programa = new ProgramaRadio(nombre, descripcion, horario);
+    this.programas.push(programa);
+    console.log(`El programa "${programa.nombre}" ha sido agregado.`);
+  }
+
+  editarPrograma(nombre, descripcion, horario) {
+    const programa = this.programas.find(p => p.nombre === nombre);
+    if (programa) {
+      programa.descripcion = descripcion;
+      programa.horario = horario;
+      console.log(`El programa "${nombre}" ha sido actualizado.`);
+    } else {
+      console.error(`El programa "${nombre}" no existe.`);
+    }
+}
+
+eliminarPrograma(nombre) {
+  const index = this.programas.findIndex(p => p.nombre === nombre);
+  if (index !== -1) {
+    this.programas.splice(index, 1);
+    console.log(`El programa "${nombre}" ha sido eliminado.`);
+  } else {
+    console.error(`El programa "${nombre}" no existe.`);
+  }
+}
+
+listarProgramas() {
+  console.log("Lista de programas de radio:");
+  this.programas.forEach(p => console.log(p.toString()));
+  }
+}

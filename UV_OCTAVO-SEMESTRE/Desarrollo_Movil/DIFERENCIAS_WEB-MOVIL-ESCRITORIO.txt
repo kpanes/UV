@@ -1,0 +1,7 @@
+WHATSAPP EN VERSION ESCRITORIO, WEB Y MOVIL
+
+- En la version web no tiene la opcion de hacer llamada y videollamada mientras que en la web y movil si.
+- Es diferente el icono de "nuevo chat" en web y escritorio
+- En la version web y escritorio no se puede enviar la ubicacion
+- En la version de escritorio se puede crear un dubujo desde whatsapp y en la version web y movil no
+- La ubicacion de los iconos es diferente en cada una de sus versiones

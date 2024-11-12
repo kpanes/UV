@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa con marcadores</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <style>
+        #map { height: 500px; }
+     </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([19.566440, -96.904626], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var markers = [];
+
+        function addMarker(lat, lng) {
+            var marker = L.marker([lat, lng], { draggable: true });
+            marker.id = L.Util.stamp(marker);
+            marker.addTo(map);
+            markers.push(marker);
+            marker.bindPopup("<b>Latitud:</b> " + lat + "<br><b>Longitud:</b> " + lng + "<br><textarea id='marker-text-" + marker.id + "' placeholder='Texto del marcador'></textarea><br><button onclick='removeMarker(" + marker.id + ")'>Eliminar ubicacion</button>").openPopup();
+        }
+
+        function removeMarker(id) {
+            for (var i = 0; i < markers.length; i++) {
+                if (markers[i].id === id) {
+                    map.removeLayer(markers[i]);
+                    markers.splice(i, 1);
+                    break;
+                }
+            }
+        }
+
+        map.on('click', function(e) {
+            addMarker(e.latlng.lat, e.latlng.lng);
+        });
+
+        map.on('popupopen', function(e) {
+            var marker = e.popup._source;
+            var textarea = document.getElementById('marker-text-' + marker.id);
+            if (textarea) {
+                textarea.value = marker.options.text || '';
+                textarea.oninput = function() {
+                    marker.options.text = this.value;
+                };
+            }
+        });
+
+    </script>
+
+</body>
+</html>
